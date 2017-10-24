@@ -24,10 +24,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.zheng.cms.model.User;
-import com.zheng.cms.model.UserExample;
-import com.zheng.cms.service.UserService;
-import com.zheng.cms.util.Paginator;
+import com.zheng.model.User;
+import com.zheng.model.UserExample;
+import com.zheng.service.UserService;
+import com.zheng.util.Paginator;
 
 /**
  * 用户控制器
