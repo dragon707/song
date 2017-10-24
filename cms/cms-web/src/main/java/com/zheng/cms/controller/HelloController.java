@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.zheng.model.User;
-import com.zheng.service.impl.UserServiceImpl;
+import com.zheng.cms.model.User;
+import com.zheng.cms.service.impl.UserServiceImpl;
 
 /**
  * 示例controller

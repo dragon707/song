@@ -1,5 +1,6 @@
 package com.zheng.service;
 
+import com.zheng.cms.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import com.zheng.mapper.UserMapper;
-import com.zheng.model.User;
-import com.zheng.model.UserVO;
+import com.zheng.cms.model.User;
+import com.zheng.cms.model.UserVO;
 
 /**
  * 测试service
