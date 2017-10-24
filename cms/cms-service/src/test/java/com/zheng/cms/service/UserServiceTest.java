@@ -1,15 +1,13 @@
-package com.zheng.service;
+package com.zheng.cms.service;
 
-import com.zheng.cms.service.UserService;
+import com.zheng.cms.model.User;
+import com.zheng.cms.model.UserVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-
-import com.zheng.cms.model.User;
-import com.zheng.cms.model.UserVO;
 
 /**
  * 测试service
@@ -18,7 +16,7 @@ import com.zheng.cms.model.UserVO;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
-	"classpath:applicationContext.xml",
+		"classpath:applicationContext.xml",
 	"classpath:applicationContext-jdbc.xml"
 })
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
