@@ -2,6 +2,9 @@ package com.zheng.cms.service;
 
 import com.zheng.cms.model.User;
 import com.zheng.cms.model.UserVO;
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +36,23 @@ public class UserServiceTest {
 		// 自动生成接口调用
 		User user = userService.getMapper().selectByPrimaryKey(1);
 		System.out.println(null == user ? "null" :user.getNickname());
+
+		// EhCache调用
+		// Create a cache manager
+		final CacheManager cacheManager = CacheManager.getInstance();
+		// create the cache called "hello-world"
+		final Cache cache = cacheManager.getCache("ehcache_common");
+		// create a key to map the data to
+		final String key = "key";
+		// Create a data element
+		final Element element = new Element(key, "value");
+		// Put the element into the data store
+		cache.put(element);
+		// Retrieve the data element
+		final Element cacheElement = cache.get(key);
+		// Print the value
+		System.out.println(cacheElement.getObjectValue());
+
 	}
 	
 }
