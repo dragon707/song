@@ -107,7 +107,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select
+    select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -125,12 +125,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zheng.cms.model.User" >
-    insert into user (id, username, password,
-    nickname, sex, ctime,
-    content)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-    #{nickname,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{ctime,jdbcType=BIGINT},
-    #{content,jdbcType=LONGVARCHAR})
+    insert into user (id, username, password, 
+      nickname, sex, ctime, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{ctime,jdbcType=BIGINT}, 
+      #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zheng.cms.model.User" >
     insert into user
@@ -219,12 +219,12 @@
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update user
     set id = #{record.id,jdbcType=INTEGER},
-    username = #{record.username,jdbcType=VARCHAR},
-    password = #{record.password,jdbcType=VARCHAR},
-    nickname = #{record.nickname,jdbcType=VARCHAR},
-    sex = #{record.sex,jdbcType=INTEGER},
-    ctime = #{record.ctime,jdbcType=BIGINT},
-    content = #{record.content,jdbcType=LONGVARCHAR}
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      ctime = #{record.ctime,jdbcType=BIGINT},
+      content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -232,11 +232,11 @@
   <update id="updateByExample" parameterType="map" >
     update user
     set id = #{record.id,jdbcType=INTEGER},
-    username = #{record.username,jdbcType=VARCHAR},
-    password = #{record.password,jdbcType=VARCHAR},
-    nickname = #{record.nickname,jdbcType=VARCHAR},
-    sex = #{record.sex,jdbcType=INTEGER},
-    ctime = #{record.ctime,jdbcType=BIGINT}
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      ctime = #{record.ctime,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -268,11 +268,11 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zheng.cms.model.User" >
     update user
     set username = #{username,jdbcType=VARCHAR},
-    password = #{password,jdbcType=VARCHAR},
-    nickname = #{nickname,jdbcType=VARCHAR},
-    sex = #{sex,jdbcType=INTEGER},
-    ctime = #{ctime,jdbcType=BIGINT},
-    content = #{content,jdbcType=LONGVARCHAR}
+      password = #{password,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      ctime = #{ctime,jdbcType=BIGINT},
+      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zheng.cms.model.User" >
