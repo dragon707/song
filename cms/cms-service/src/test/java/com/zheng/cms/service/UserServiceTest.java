@@ -1,7 +1,7 @@
 package com.zheng.cms.service;
 
-import com.zheng.cms.model.User;
-import com.zheng.cms.model.UserVO;
+import com.zheng.cms.dao.model.User;
+import com.zheng.cms.dao.model.UserVO;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
@@ -19,8 +19,9 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
-		"classpath:applicationContext.xml",
-	"classpath:applicationContext-jdbc.xml"
+	"classpath:applicationContext.xml",
+	"classpath:applicationContext-jdbc.xml",
+	"classpath:applicationContext-ehcache.xml"
 })
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class UserServiceTest {
@@ -37,7 +38,7 @@ public class UserServiceTest {
 		User user = userService.getMapper().selectByPrimaryKey(1);
 		System.out.println(null == user ? "null" :user.getNickname());
 
-		// EhCache调用
+        // EhCache调用
 		// Create a cache manager
 		final CacheManager cacheManager = CacheManager.getInstance();
 		// create the cache called "hello-world"
@@ -52,7 +53,6 @@ public class UserServiceTest {
 		final Element cacheElement = cache.get(key);
 		// Print the value
 		System.out.println(cacheElement.getObjectValue());
-
 	}
 	
 }

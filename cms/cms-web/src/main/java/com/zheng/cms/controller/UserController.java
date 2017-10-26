@@ -1,7 +1,7 @@
 package com.zheng.cms.controller;
 
-import com.zheng.cms.model.User;
-import com.zheng.cms.model.UserExample;
+import com.zheng.cms.dao.model.User;
+import com.zheng.cms.dao.model.UserExample;
 import com.zheng.cms.service.UserService;
 import com.zheng.common.util.Paginator;
 import org.slf4j.Logger;
@@ -32,7 +32,7 @@ import java.util.Map;
 public class UserController extends BaseController {
 
 	private static Logger _log = LoggerFactory.getLogger(UserController.class);
-
+	
 	@Autowired
 	private UserService userService;
 
@@ -40,7 +40,7 @@ public class UserController extends BaseController {
 	public void exceptionHandler(Exception e) {
 		e.printStackTrace();
 	}
-
+	
 	/**
 	 * 首页
 	 * @return
@@ -49,7 +49,7 @@ public class UserController extends BaseController {
 	public String index() {
 		return "redirect:/user/list";
 	}
-
+	
 	/**
 	 * 列表
 	 * @param page
@@ -86,7 +86,7 @@ public class UserController extends BaseController {
 
 		return "/user/list";
 	}
-
+	
 	/**
 	 * 新增get
 	 * @return
@@ -95,7 +95,7 @@ public class UserController extends BaseController {
 	public String add() {
 		return "/user/add";
 	}
-
+	
 	/**
 	 * 新增post
 	 * @param user
@@ -129,7 +129,7 @@ public class UserController extends BaseController {
 		userService.getMapper().deleteByPrimaryKey(id);
 		return "redirect:/user/list";
 	}
-
+	
 	/**
 	 * 修改get
 	 * @param id
@@ -141,7 +141,7 @@ public class UserController extends BaseController {
 		model.addAttribute("user", userService.getMapper().selectByPrimaryKey(id));
 		return "/user/update";
 	}
-
+	
 	/**
 	 * 修改post
 	 * @param id
@@ -159,13 +159,13 @@ public class UserController extends BaseController {
 		userService.getMapper().updateByPrimaryKeySelective(user);
 		return "redirect:/user/list";
 	}
-
+	
 	/**
 	 * 上传文件
 	 * @param file
 	 * @param request
 	 * @return
-	 * @throws IOException
+	 * @throws IOException 
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
@@ -174,11 +174,11 @@ public class UserController extends BaseController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 判断上传文件类型
 		String contentType = file.getContentType().toLowerCase();
-		if ((!contentType.equals("image/jpeg")) &&
-				(!contentType.equals("image/pjpeg")) &&
-				(!contentType.equals("image/png")) &&
-				(!contentType.equals("image/x-png")) &&
-				(!contentType.equals("image/bmp")) &&
+		if ((!contentType.equals("image/jpeg")) && 
+				(!contentType.equals("image/pjpeg")) && 
+				(!contentType.equals("image/png")) && 
+				(!contentType.equals("image/x-png")) && 
+				(!contentType.equals("image/bmp")) && 
 				(!contentType.equals("image/gif"))) {
 			map.put(RESULT, FAILED);
 			map.put(DATA, "不支持该类型的文件！");
@@ -198,7 +198,7 @@ public class UserController extends BaseController {
 		map.put(DATA, targetFile.getAbsoluteFile());
 		return map;
 	}
-
+	
 	/**
 	 * ajax
 	 * @param id
@@ -209,5 +209,5 @@ public class UserController extends BaseController {
 	public Object ajax(@PathVariable int id) {
 		return userService.getMapper().selectByPrimaryKey(id);
 	}
-
+	
 }

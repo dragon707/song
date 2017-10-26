@@ -1,7 +1,7 @@
 package com.zheng.cms.service;
 
-import com.zheng.cms.mapper.UserMapper;
-import com.zheng.cms.model.UserVO;
+import com.zheng.cms.dao.mapper.UserMapper;
+import com.zheng.cms.dao.model.UserVO;
 
 /**
  * 用户service接口
@@ -9,12 +9,12 @@ import com.zheng.cms.model.UserVO;
  * @date 2016年7月6日 下午6:03:45
  */
 public interface UserService extends BaseService<UserMapper> {
-
+	
 	/**
 	 * 获取带book数据的用户
 	 * @param id
 	 * @return
 	 */
 	UserVO selectUserWithBook(int id);
-
+	
 }

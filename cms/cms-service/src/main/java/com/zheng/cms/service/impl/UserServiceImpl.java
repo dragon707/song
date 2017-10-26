@@ -1,8 +1,8 @@
 package com.zheng.cms.service.impl;
 
-import com.zheng.cms.mapper.UserMapper;
-import com.zheng.cms.mapper.UserVOMapper;
-import com.zheng.cms.model.UserVO;
+import com.zheng.cms.dao.mapper.UserMapper;
+import com.zheng.cms.dao.mapper.UserVOMapper;
+import com.zheng.cms.dao.model.UserVO;
 import com.zheng.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserMapper userMapper;
-
+	
 	@Autowired
 	private UserVOMapper userVOMapper;
 
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 	public UserMapper getMapper() {
 		return userMapper;
 	}
-
+	
 	/**
 	 * 获取带book数据的用户
 	 * @param id
