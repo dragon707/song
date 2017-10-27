@@ -62,12 +62,12 @@
         <url-pattern>/druid/*</url-pattern>
     </servlet-mapping>
 
-    <!--session配置-->
+    <!-- session配置 -->
     <session-config>
         <session-timeout>120</session-timeout>
     </session-config>
 
-    <!--欢迎页面-->
+    <!-- 欢迎页面 -->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
@@ -82,5 +82,4 @@
         <error-code>500</error-code>
         <location>/WEB-INF/jsp/500.jsp</location>
     </error-page>
-
 </web-app>

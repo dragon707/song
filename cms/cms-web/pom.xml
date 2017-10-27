@@ -39,11 +39,6 @@
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-maven-plugin</artifactId>
-            <version>8.1.16.v20140903</version>
-        </dependency>
     </dependencies>
 
     <profiles>
@@ -84,19 +79,17 @@
         <plugins>
             <!-- jetty插件 -->
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.9.v20130131</version>
+                <version>9.3.20.v20170531</version>
                 <configuration>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                     <webApp>
                         <contextPath>/cms-web</contextPath>
                     </webApp>
-                    <connectors>
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>8088</port>
-                        </connector>
-                    </connectors>
+                    <httpConnector>
+                        <port>8088</port>
+                    </httpConnector>
                     <reload>automatic</reload>
                 </configuration>
             </plugin>
