@@ -1,5 +1,30 @@
 ## zheng
 
+# 介绍
+```
+zheng
+├── common 公共模块
+├── cms 内容管理系统
+|    ├── cms-dao
+|    ├── cms-service
+|    └── cms-web
+├── qa 问答系统
+|    ├── qa-dao
+|    ├── qa-service
+|    └── qa-web
+├── pay 支付系统
+|    ├── pay-service
+|    ├── pay-sdk
+|    └── pay-web
+├── upms 通用用户权限系统
+|    ├── upms-dao
+|    ├── upms-service
+|    └── upms-web
+└── oss 对象存储系统
+     ├── oss-sdk
+     └── oss-web
+```
+
 # 后端技术:
 * Spring
 * SpringMVC: MVC框架
