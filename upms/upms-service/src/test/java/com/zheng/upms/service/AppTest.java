@@ -1,4 +1,4 @@
-package com.zheng;
+package com.zheng.upms.service;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -15,7 +15,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
-    public AppTest(String testName )
+    public AppTest( String testName )
     {
         super( testName );
     }
