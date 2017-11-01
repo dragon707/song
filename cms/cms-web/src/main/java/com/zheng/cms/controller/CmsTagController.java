@@ -1,8 +1,8 @@
 package com.zheng.cms.controller;
 
-import com.zheng.cms.dao.model.CmsArticle;
-import com.zheng.cms.dao.model.CmsArticleExample;
-import com.zheng.cms.service.CmsArticleService;
+import com.zheng.cms.dao.model.CmsTag;
+import com.zheng.cms.dao.model.CmsTagExample;
+import com.zheng.cms.service.CmsTagService;
 import com.zheng.common.util.Paginator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,17 +21,17 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * 文章控制器
+ * 标签控制器
  * Created by shuzheng on 2016/11/14.
  */
 @Controller
-@RequestMapping("/article")
-public class CmsArticleController extends BaseController {
+@RequestMapping("/tag")
+public class CmsTagController extends BaseController {
 
-	private final static Logger _log = LoggerFactory.getLogger(CmsArticleController.class);
+	private final static Logger _log = LoggerFactory.getLogger(CmsTagController.class);
 	
 	@Autowired
-	private CmsArticleService cmsArticleService;
+	private CmsTagService cmsTagService;
 
 	/**
 	 * 首页
@@ -39,7 +39,7 @@ public class CmsArticleController extends BaseController {
 	 */
 	@RequestMapping("")
 	public String index() {
-		return "redirect:/article/list";
+		return "redirect:/tag/list";
 	}
 	
 	/**
@@ -56,19 +56,19 @@ public class CmsArticleController extends BaseController {
 			HttpServletRequest request, Model model) {
 
 		// 数据列表
-		CmsArticleExample cmsArticleExample = new CmsArticleExample();
-		cmsArticleExample.setOffset((page - 1) * rows);
-		cmsArticleExample.setLimit(rows);
-		cmsArticleExample.setOrderByClause("articleId desc");
-		List<CmsArticle> articles = cmsArticleService.getMapper().selectByExample(cmsArticleExample);
+		CmsTagExample cmsTagExample = new CmsTagExample();
+		cmsTagExample.setOffset((page - 1) * rows);
+		cmsTagExample.setLimit(rows);
+		cmsTagExample.setOrderByClause("tagId desc");
+		List<CmsTag> tags = cmsTagService.getMapper().selectByExample(cmsTagExample);
 
 		// 分页对象
-		long total = cmsArticleService.getMapper().countByExample(cmsArticleExample);
+		long total = cmsTagService.getMapper().countByExample(cmsTagExample);
 		Paginator paginator = new Paginator(total, page, rows, request);
 
-		model.addAttribute("articles", articles);
+		model.addAttribute("tags", tags);
 		model.addAttribute("paginator", paginator);
-		return "/article/list";
+		return "/tag/list";
 	}
 	
 	/**
@@ -77,27 +77,27 @@ public class CmsArticleController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add() {
-		return "/article/add";
+		return "/tag/add";
 	}
 	
 	/**
 	 * 新增post
-	 * @param cmsArticle
+	 * @param cmsTag
 	 * @param binding
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(@Valid CmsArticle cmsArticle, BindingResult binding) {
+	public String add(@Valid CmsTag cmsTag, BindingResult binding) {
 		if (binding.hasErrors()) {
 			for (ObjectError error : binding.getAllErrors()) {
 				_log.error(error.getDefaultMessage());
 			}
-			return "/article/add";
+			return "/tag/add";
 		}
-		cmsArticle.setCtime(System.currentTimeMillis());
-		cmsArticleService.getMapper().insertSelective(cmsArticle);
-		_log.info("新增记录id为：{}", cmsArticle.getArticleId());
-		return "redirect:/article/list";
+		cmsTag.setCtime(System.currentTimeMillis());
+		cmsTagService.getMapper().insertSelective(cmsTag);
+		_log.info("新增记录id为：{}", cmsTag.getTagId());
+		return "redirect:/tag/list";
 	}
 
 	/**
@@ -107,8 +107,8 @@ public class CmsArticleController extends BaseController {
 	 */
 	@RequestMapping(value = "/delete/{id}",method = RequestMethod.GET)
 	public String delete(@PathVariable("id") int id) {
-		cmsArticleService.getMapper().deleteByPrimaryKey(id);
-		return "redirect:/article/list";
+		cmsTagService.getMapper().deleteByPrimaryKey(id);
+		return "redirect:/tag/list";
 	}
 	
 	/**
@@ -119,26 +119,26 @@ public class CmsArticleController extends BaseController {
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
 	public String update(@PathVariable("id") int id, Model model) {
-		model.addAttribute("article", cmsArticleService.getMapper().selectByPrimaryKey(id));
-		return "/article/update";
+		model.addAttribute("tag", cmsTagService.getMapper().selectByPrimaryKey(id));
+		return "/tag/update";
 	}
 	
 	/**
 	 * 修改post
 	 * @param id
-	 * @param cmsArticle
+	 * @param cmsTag
 	 * @param binding
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-	public String update(@PathVariable("id") int id, @Valid CmsArticle cmsArticle, BindingResult binding, Model model) {
+	public String update(@PathVariable("id") int id, @Valid CmsTag cmsTag, BindingResult binding, Model model) {
 		if (binding.hasErrors()) {
 			model.addAttribute("errors", binding.getAllErrors());
-			return "/article/update/" + id;
+			return "/tag/update/" + id;
 		}
-		cmsArticleService.getMapper().updateByPrimaryKeySelective(cmsArticle);
-		return "redirect:/article/list";
+		cmsTagService.getMapper().updateByPrimaryKeySelective(cmsTag);
+		return "redirect:/tag/list";
 	}
 
 }
