@@ -34,15 +34,6 @@ public class CmsCategoryController extends BaseController {
 	private CmsCategoryService cmsCategoryService;
 
 	/**
-	 * 首页
-	 * @return
-	 */
-	@RequestMapping("")
-	public String index() {
-		return "redirect:/category/list";
-	}
-	
-	/**
 	 * 列表
 	 * @param page
 	 * @param rows
@@ -59,7 +50,7 @@ public class CmsCategoryController extends BaseController {
 		CmsCategoryExample cmsCategoryExample = new CmsCategoryExample();
 		cmsCategoryExample.setOffset((page - 1) * rows);
 		cmsCategoryExample.setLimit(rows);
-		cmsCategoryExample.setOrderByClause("categoryId desc");
+		cmsCategoryExample.setOrderByClause("category_id desc");
 		List<CmsCategory> categorys = cmsCategoryService.getMapper().selectByExample(cmsCategoryExample);
 
 		// 分页对象

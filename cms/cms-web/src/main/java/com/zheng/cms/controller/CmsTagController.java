@@ -34,15 +34,6 @@ public class CmsTagController extends BaseController {
 	private CmsTagService cmsTagService;
 
 	/**
-	 * 首页
-	 * @return
-	 */
-	@RequestMapping("")
-	public String index() {
-		return "redirect:/tag/list";
-	}
-	
-	/**
 	 * 列表
 	 * @param page
 	 * @param rows
@@ -59,7 +50,7 @@ public class CmsTagController extends BaseController {
 		CmsTagExample cmsTagExample = new CmsTagExample();
 		cmsTagExample.setOffset((page - 1) * rows);
 		cmsTagExample.setLimit(rows);
-		cmsTagExample.setOrderByClause("tagId desc");
+		cmsTagExample.setOrderByClause("tag_id desc");
 		List<CmsTag> tags = cmsTagService.getMapper().selectByExample(cmsTagExample);
 
 		// 分页对象

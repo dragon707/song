@@ -34,15 +34,6 @@ public class CmsArticleController extends BaseController {
 	private CmsArticleService cmsArticleService;
 
 	/**
-	 * 首页
-	 * @return
-	 */
-	@RequestMapping("")
-	public String index() {
-		return "redirect:/article/list";
-	}
-	
-	/**
 	 * 列表
 	 * @param page
 	 * @param rows
@@ -59,7 +50,7 @@ public class CmsArticleController extends BaseController {
 		CmsArticleExample cmsArticleExample = new CmsArticleExample();
 		cmsArticleExample.setOffset((page - 1) * rows);
 		cmsArticleExample.setLimit(rows);
-		cmsArticleExample.setOrderByClause("articleId desc");
+		cmsArticleExample.setOrderByClause("article_id desc");
 		List<CmsArticle> articles = cmsArticleService.getMapper().selectByExample(cmsArticleExample);
 
 		// 分页对象
