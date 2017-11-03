@@ -2,15 +2,16 @@ package com.zheng.cms.dao.mapper;
 
 import com.zheng.cms.dao.model.Book;
 import com.zheng.cms.dao.model.BookExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface BookMapper {
     int countByExample(BookExample example);
 
     int deleteByExample(BookExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer bookId);
 
     int insert(Book record);
 
@@ -18,7 +19,7 @@ public interface BookMapper {
 
     List<Book> selectByExample(BookExample example);
 
-    Book selectByPrimaryKey(Integer id);
+    Book selectByPrimaryKey(Integer bookId);
 
     int updateByExampleSelective(@Param("record") Book record, @Param("example") BookExample example);
 
