@@ -29,7 +29,7 @@ import java.util.List;
 public class CmsTagController extends BaseController {
 
 	private final static Logger _log = LoggerFactory.getLogger(CmsTagController.class);
-	
+
 	@Autowired
 	private CmsTagService cmsTagService;
 
@@ -50,7 +50,7 @@ public class CmsTagController extends BaseController {
 		CmsTagExample cmsTagExample = new CmsTagExample();
 		cmsTagExample.setOffset((page - 1) * rows);
 		cmsTagExample.setLimit(rows);
-		cmsTagExample.setOrderByClause("tag_id desc");
+		cmsTagExample.setOrderByClause("orders desc");
 		List<CmsTag> tags = cmsTagService.getMapper().selectByExample(cmsTagExample);
 
 		// 分页对象
@@ -61,7 +61,7 @@ public class CmsTagController extends BaseController {
 		model.addAttribute("paginator", paginator);
 		return "/tag/list";
 	}
-	
+
 	/**
 	 * 新增get
 	 * @return
@@ -70,7 +70,7 @@ public class CmsTagController extends BaseController {
 	public String add() {
 		return "/tag/add";
 	}
-	
+
 	/**
 	 * 新增post
 	 * @param cmsTag
@@ -85,7 +85,9 @@ public class CmsTagController extends BaseController {
 			}
 			return "/tag/add";
 		}
-		cmsTag.setCtime(System.currentTimeMillis());
+		long time = System.currentTimeMillis();
+		cmsTag.setCtime(time);
+		cmsTag.setOrders(time);
 		cmsTagService.getMapper().insertSelective(cmsTag);
 		_log.info("新增记录id为：{}", cmsTag.getTagId());
 		return "redirect:/tag/list";
@@ -101,7 +103,7 @@ public class CmsTagController extends BaseController {
 		cmsTagService.getMapper().deleteByPrimaryKey(id);
 		return "redirect:/tag/list";
 	}
-	
+
 	/**
 	 * 修改get
 	 * @param id
@@ -113,7 +115,7 @@ public class CmsTagController extends BaseController {
 		model.addAttribute("tag", cmsTagService.getMapper().selectByPrimaryKey(id));
 		return "/tag/update";
 	}
-	
+
 	/**
 	 * 修改post
 	 * @param id
