@@ -1,0 +1,148 @@
+2017-11-06 14:05:20.311  INFO 11240 --- [main] com.zheng.SpringbootApplicationTests     : Starting SpringbootApplicationTests on DESKTOP-R05VNSL with PID 11240 (started by liusong in E:\github\song\springboot)
+2017-11-06 14:05:20.313  INFO 11240 --- [main] com.zheng.SpringbootApplicationTests     : No active profile set, falling back to default profiles: default
+2017-11-06 14:05:21.095  INFO 11240 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6e9175d8: startup date [Mon Nov 06 14:05:21 CST 2017]; root of context hierarchy
+2017-11-06 14:05:23.982  INFO 11240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-06 14:05:24.174  INFO 11240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-06 14:05:24.187  INFO 11240 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.zheng.springboot.service.UserRepository.
+2017-11-06 14:05:24.285  INFO 11240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-06 14:05:24.305  INFO 11240 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zheng.springboot.service.UserRepository.
+2017-11-06 14:05:25.115  INFO 11240 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$21e33b8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-06 14:05:26.498  INFO 11240 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-06 14:05:26.541  INFO 11240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-06 14:05:26.673  INFO 11240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-11-06 14:05:26.678  INFO 11240 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-11-06 14:05:26.682  INFO 11240 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-11-06 14:05:26.792  INFO 11240 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-11-06 14:05:27.000  INFO 11240 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-06 14:05:28.348  INFO 11240 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-11-06 14:05:28.505  INFO 11240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-06 14:05:30.221  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/index],methods=[GET]}" onto public java.lang.String com.zheng.springboot.web.HelloController.index(org.springframework.ui.ModelMap)
+2017-11-06 14:05:30.224  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[PUT]}" onto public java.lang.String com.zheng.springboot.web.UserController.putUser(java.lang.Long,com.zheng.springboot.domain.User)
+2017-11-06 14:05:30.224  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto public java.lang.String com.zheng.springboot.web.UserController.postUser(com.zheng.springboot.domain.User)
+2017-11-06 14:05:30.224  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.util.List<com.zheng.springboot.domain.User> com.zheng.springboot.web.UserController.getUserList()
+2017-11-06 14:05:30.225  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[GET]}" onto public com.zheng.springboot.domain.User com.zheng.springboot.web.UserController.getUser(java.lang.Long)
+2017-11-06 14:05:30.225  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{id}],methods=[DELETE]}" onto public java.lang.String com.zheng.springboot.web.UserController.deleteUser(java.lang.Long)
+2017-11-06 14:05:30.226  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2017-11-06 14:05:30.231  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2017-11-06 14:05:30.231  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2017-11-06 14:05:30.231  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2017-11-06 14:05:30.237  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-06 14:05:30.237  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-06 14:05:30.944  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6e9175d8: startup date [Mon Nov 06 14:05:21 CST 2017]; root of context hierarchy
+2017-11-06 14:05:31.060  INFO 11240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-06 14:05:31.061  INFO 11240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-06 14:05:31.110  INFO 11240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-06 14:05:33.251  INFO 11240 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-06 14:05:33.838  WARN 11240 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-06 14:05:33.948  INFO 11240 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-11-06 14:05:33.977  INFO 11240 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2017-11-06 14:05:33.987  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-11-06 14:05:33.992  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method index was hello-controller
+2017-11-06 14:05:33.995  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: index belongs to groups: [[ResourceGroup{groupName='hello-controller', position=0, controller=com.zheng.springboot.web.HelloController}]] 
+2017-11-06 14:05:33.996  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method putUser was user-controller
+2017-11-06 14:05:33.996  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: putUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.zheng.springboot.web.UserController}]] 
+2017-11-06 14:05:33.996  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUser was user-controller
+2017-11-06 14:05:33.997  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.zheng.springboot.web.UserController}]] 
+2017-11-06 14:05:33.997  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteUser was user-controller
+2017-11-06 14:05:33.997  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: deleteUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.zheng.springboot.web.UserController}]] 
+2017-11-06 14:05:33.998  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postUser was user-controller
+2017-11-06 14:05:33.998  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: postUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.zheng.springboot.web.UserController}]] 
+2017-11-06 14:05:33.998  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUserList was user-controller
+2017-11-06 14:05:33.998  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getUserList belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.zheng.springboot.web.UserController}]] 
+2017-11-06 14:05:34.004  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+2017-11-06 14:05:34.005  INFO 11240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/hello-controller Description: hello-controller Position: 0
+2017-11-06 14:05:34.024  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.024  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2017-11-06 14:05:34.034  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.034  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2017-11-06 14:05:34.041  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /index.com.zheng.springboot.web.HelloController.index.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.041  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /index.com.zheng.springboot.web.HelloController.index.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.108  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method index was hello-controller
+2017-11-06 14:05:34.168  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method index was hello-controller
+2017-11-06 14:05:34.192  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.193  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2017-11-06 14:05:34.193  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.193  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2017-11-06 14:05:34.194  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /users/{id}.com.zheng.springboot.web.UserController.deleteUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.194  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /users/{id}.com.zheng.springboot.web.UserController.deleteUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.198  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteUser was user-controller
+2017-11-06 14:05:34.200  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteUser was user-controller
+2017-11-06 14:05:34.204  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.204  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.205  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.206  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.237  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.237  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.238  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.238  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.239  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /users/{id}.com.zheng.springboot.web.UserController.getUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.239  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /users/{id}.com.zheng.springboot.web.UserController.getUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.241  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUser was user-controller
+2017-11-06 14:05:34.243  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUser was user-controller
+2017-11-06 14:05:34.245  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.245  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.245  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.245  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.248  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.248  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.248  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.249  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key java.util.List<com.zheng.springboot.domain.User>(true)
+2017-11-06 14:05:34.250  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.250  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(true)
+2017-11-06 14:05:34.250  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /users.com.zheng.springboot.web.UserController.getUserList.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.250  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /users.com.zheng.springboot.web.UserController.getUserList.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.252  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUserList was user-controller
+2017-11-06 14:05:34.253  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getUserList was user-controller
+2017-11-06 14:05:34.256  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.256  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.257  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.257  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.258  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.258  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.259  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2017-11-06 14:05:34.264  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /users.com.zheng.springboot.web.UserController.postUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.265  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /users.com.zheng.springboot.web.UserController.postUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.267  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postUser was user-controller
+2017-11-06 14:05:34.268  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postUser was user-controller
+2017-11-06 14:05:34.270  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.271  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.271  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.271  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.zheng.springboot.domain.User(false)
+2017-11-06 14:05:34.271  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.272  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2017-11-06 14:05:34.272  INFO 11240 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2017-11-06 14:05:34.273  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2017-11-06 14:05:34.273  INFO 11240 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /users/{id}.com.zheng.springboot.web.UserController.putUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.273  INFO 11240 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /users/{id}.com.zheng.springboot.web.UserController.putUser.DefaultGenericTypeNamingStrategy
+2017-11-06 14:05:34.279  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method putUser was user-controller
+2017-11-06 14:05:34.280  INFO 11240 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method putUser was user-controller
+2017-11-06 14:05:34.302  INFO 11240 --- [main] com.zheng.SpringbootApplicationTests     : Started SpringbootApplicationTests in 15.276 seconds (JVM running for 16.719)
+2017-11-06 14:05:34.477  INFO 11240 --- [cluster-ClusterId{value='59fffbad897b1a2be84f3190', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63) ~[mongodb-driver-core-3.2.2.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114) ~[mongodb-driver-core-3.2.2.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) ~[mongodb-driver-core-3.2.2.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_65]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_65]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_65]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_65]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_65]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_65]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_65]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_65]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50) ~[mongodb-driver-core-3.2.2.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58) ~[mongodb-driver-core-3.2.2.jar:na]
+	... 3 common frames omitted
+
+2017-11-06 14:05:35.103  INFO 11240 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6e9175d8: startup date [Mon Nov 06 14:05:21 CST 2017]; root of context hierarchy
+2017-11-06 14:05:35.119  INFO 11240 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
