@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/11/20 16:47:38                          */
+/* Created on:     2016/11/20 22:14:12                          */
 /*==============================================================*/
 
 
@@ -128,7 +128,7 @@ alter table cms_category_tag comment 'cms_category_tag 类目标签关联表';
 create table cms_comment
 (
    comment_id           int(10) unsigned not null auto_increment comment '编号',
-   pid                  int(10) unsigned default 0 comment '回复楼中楼编号回复楼中楼编号',
+   pid                  int(10) unsigned default NULL comment '回复楼中楼编号回复楼中楼编号',
    article_id           int(10) unsigned not null comment '文章编号',
    user_id              int(10) unsigned not null comment '用户编号',
    content              text not null comment '评论内容',
@@ -222,7 +222,7 @@ alter table cms_comment add constraint FK_Reference_1 foreign key (article_id)
       references cms_article (article_id) on delete cascade on update cascade;
 
 alter table cms_comment add constraint FK_Reference_2 foreign key (pid)
-      references cms_comment (comment_id) on delete set null;
+      references cms_comment (comment_id) on delete cascade on update cascade;
 
 alter table test_book add constraint FK_Reference_9 foreign key (user_id)
       references test_user (user_id) on delete cascade on update cascade;
