@@ -15,14 +15,27 @@ zheng
 ├── pay 支付系统
 |    ├── pay-service
 |    ├── pay-sdk
-|    └── pay-web
+|    └── pay-demo
+├── ucenter 用户系统
+|    ├── ucenter-dao
+|    ├── ucenter-service
+|    └── ucenter-home
+├── wechat 微信系统
+|    ├── wechat-mp 公众号
+|    |    ├── wechat-mp-dao
+|    |    ├── wechat-mp-service
+|    |    └── wechat-mp-admin
+|    └── wechat-app 小程序
+|         ├── wechat-app-sdk
+|         └── wechat-app-example
 ├── upms 通用用户权限系统
 |    ├── upms-dao
 |    ├── upms-service
-|    └── upms-web
+|    └── upms-admin
+├── api 接口系统
 └── oss 对象存储系统
      ├── oss-sdk
-     └── oss-web
+     └── oss-admin
 ```
 
 # 后端技术:
@@ -45,7 +58,7 @@ zheng
 * Qiniu: 云存储
 * Jenkins: 持续集成
 * Log4J: 日志管理
-* Protobuf|json: 数据传输
+* Protobuf|json: 数据传输 
 * Spring-boot
 
 
@@ -71,3 +84,7 @@ zheng
 * Navicat for MySQL: 数据库客户端管理
 * IntelliJ IDEA: 开发IDE
 * PowerDesigner: 建模工具
+
+
+# 数据模型
+![数据库模型](DataModelDiagram/zheng.png)
