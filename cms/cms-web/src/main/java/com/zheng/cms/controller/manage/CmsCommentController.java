@@ -1,5 +1,6 @@
-package com.zheng.cms.controller;
+package com.zheng.cms.controller.manage;
 
+import com.zheng.cms.controller.BaseController;
 import com.zheng.cms.dao.model.CmsComment;
 import com.zheng.cms.dao.model.CmsCommentExample;
 import com.zheng.cms.service.CmsCommentService;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import java.util.List;
 
 /**
