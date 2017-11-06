@@ -2,8 +2,9 @@ package com.zheng.cms.dao.mapper;
 
 import com.zheng.cms.dao.model.CmsArticleCategory;
 import com.zheng.cms.dao.model.CmsArticleCategoryExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CmsArticleCategoryMapper {
     int countByExample(CmsArticleCategoryExample example);

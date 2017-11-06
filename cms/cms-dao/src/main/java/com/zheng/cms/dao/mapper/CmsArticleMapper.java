@@ -2,8 +2,9 @@ package com.zheng.cms.dao.mapper;
 
 import com.zheng.cms.dao.model.CmsArticle;
 import com.zheng.cms.dao.model.CmsArticleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CmsArticleMapper {
     int countByExample(CmsArticleExample example);

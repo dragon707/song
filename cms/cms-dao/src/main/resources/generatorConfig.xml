@@ -17,7 +17,7 @@
 		<property name="endingDelimiter" value=""/>
 
 		<!-- 为生成的Java模型创建一个toString方法 -->
-        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
 
 		<!-- 为生成的Java模型类添加序列化接口，并生成serialVersionUID字段 -->
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
@@ -25,7 +25,7 @@
 		</plugin>
 
 		<!-- 生成一个新的selectByExample方法，这个方法可以接受一个RowBounds参数，主要用来实现分页 -->
-        <plugin type="com.zheng.common.plugin.PaginationPlugin"></plugin>
+		<plugin type="com.zheng.common.plugin.PaginationPlugin"></plugin>
 
 		<!-- 生成在XML中的<cache>元素 -->
 		<plugin type="org.mybatis.generator.plugins.CachePlugin">
@@ -50,9 +50,9 @@
 
 		<!-- 数据库连接 -->
 		<jdbcConnection driverClass="${jdbc.driver}"
-			connectionURL="${jdbc.url}"
-			userId="${jdbc.username}"
-			password="${jdbc.password}" />
+						connectionURL="${jdbc.url}"
+						userId="${jdbc.username}"
+						password="${jdbc.password}" />
 
 		<!-- model生成 -->
 		<javaModelGenerator targetPackage="${generator.javaModelGenerator.targetPackage}" targetProject="src/main/java" />
@@ -64,11 +64,11 @@
 		<javaClientGenerator targetPackage="${generator.javaClientGenerator.targetPackage}" targetProject="src/main/java" type="XMLMAPPER" />
 
 		<!-- 需要映射的表 -->
-		<table tableName="user" domainObjectName="User">
-			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		<table tableName="test_user" domainObjectName="User">
+			<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
 		</table>
-		<table tableName="book" domainObjectName="Book">
-			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		<table tableName="test_book" domainObjectName="Book">
+			<generatedKey column="book_id" sqlStatement="MySql" identity="true" />
 		</table>
 		<table tableName="cms_article" domainObjectName="CmsArticle">
 			<generatedKey column="article_id" sqlStatement="MySql" identity="true" />
