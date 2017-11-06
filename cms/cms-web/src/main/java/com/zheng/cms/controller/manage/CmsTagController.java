@@ -23,7 +23,7 @@ import java.util.List;
  * Created by shuzheng on 2016/11/14.
  */
 @Controller
-@RequestMapping("/tag")
+@RequestMapping("/manage/tag")
 public class CmsTagController extends BaseController {
 
 	private final static Logger _log = LoggerFactory.getLogger(CmsTagController.class);
@@ -58,7 +58,7 @@ public class CmsTagController extends BaseController {
 
 		model.addAttribute("tags", tags);
 		model.addAttribute("paginator", paginator);
-		return "/tag/list";
+		return "/manage/tag/list";
 	}
 	
 	/**
@@ -67,7 +67,7 @@ public class CmsTagController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add() {
-		return "/tag/add";
+		return "/manage/tag/add";
 	}
 	
 	/**
@@ -77,14 +77,14 @@ public class CmsTagController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add( CmsTag cmsTag, Model model) {
+	public String add(CmsTag cmsTag, Model model) {
 		long time = System.currentTimeMillis();
 		cmsTag.setCtime(time);
 		cmsTag.setOrders(time);
 		int count = cmsTagService.getMapper().insertSelective(cmsTag);
 		model.addAttribute("count", count);
 		_log.info("新增记录id为：{}", cmsTag.getTagId());
-		return "redirect:/tag/list";
+		return "redirect:/manage/tag/list";
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class CmsTagController extends BaseController {
 	public String delete(@PathVariable("ids") String ids, Model model) {
 		int count = cmsTagService.deleteByPrimaryKeys(ids);
 		model.addAttribute("count", count);
-		return "redirect:/tag/list";
+		return "redirect:/manage/tag/list";
 	}
 	
 	/**
@@ -110,7 +110,7 @@ public class CmsTagController extends BaseController {
 	public String update(@PathVariable("id") int id, Model model) {
 		CmsTag tag = cmsTagService.getMapper().selectByPrimaryKey(id);
 		model.addAttribute("tag", tag);
-		return "/tag/update";
+		return "/manage/tag/update";
 	}
 	
 	/**
@@ -121,11 +121,11 @@ public class CmsTagController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-	public String update(@PathVariable("id") int id,  CmsTag cmsTag, Model model) {
+	public String update(@PathVariable("id") int id, CmsTag cmsTag, Model model) {
 		int count = cmsTagService.getMapper().updateByPrimaryKeySelective(cmsTag);
 		model.addAttribute("count", count);
 		model.addAttribute("id", id);
-		return "redirect:/tag/list";
+		return "redirect:/manage/tag/list";
 	}
 
 }

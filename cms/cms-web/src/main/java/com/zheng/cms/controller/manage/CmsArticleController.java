@@ -23,7 +23,7 @@ import java.util.List;
  * Created by shuzheng on 2016/11/14.
  */
 @Controller
-@RequestMapping("/article")
+@RequestMapping("/manage/article")
 public class CmsArticleController extends BaseController {
 
 	private final static Logger _log = LoggerFactory.getLogger(CmsArticleController.class);
@@ -58,7 +58,7 @@ public class CmsArticleController extends BaseController {
 
 		model.addAttribute("articles", articles);
 		model.addAttribute("paginator", paginator);
-		return "/article/list";
+		return "/manage/article/list";
 	}
 	
 	/**
@@ -67,7 +67,7 @@ public class CmsArticleController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add() {
-		return "/article/add";
+		return "/manage/article/add";
 	}
 	
 	/**
@@ -77,14 +77,14 @@ public class CmsArticleController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add( CmsArticle cmsArticle, Model model) {
+	public String add(CmsArticle cmsArticle, Model model) {
 		long time = System.currentTimeMillis();
 		cmsArticle.setCtime(time);
 		cmsArticle.setOrders(time);
 		int count = cmsArticleService.getMapper().insertSelective(cmsArticle);
 		model.addAttribute("count", count);
 		_log.info("新增记录id为：{}", cmsArticle.getArticleId());
-		return "redirect:/article/list";
+		return "redirect:/manage/article/list";
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class CmsArticleController extends BaseController {
 	public String delete(@PathVariable("ids") String ids, Model model) {
 		int count = cmsArticleService.deleteByPrimaryKeys(ids);
 		model.addAttribute("count", count);
-		return "redirect:/article/list";
+		return "redirect:/manage/article/list";
 	}
 	
 	/**
@@ -110,7 +110,7 @@ public class CmsArticleController extends BaseController {
 	public String update(@PathVariable("id") int id, Model model) {
 		CmsArticle article = cmsArticleService.getMapper().selectByPrimaryKey(id);
 		model.addAttribute("article", article);
-		return "/article/update";
+		return "/manage/article/update";
 	}
 	
 	/**
@@ -121,11 +121,11 @@ public class CmsArticleController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-	public String update(@PathVariable("id") int id,  CmsArticle cmsArticle, Model model) {
+	public String update(@PathVariable("id") int id, CmsArticle cmsArticle, Model model) {
 		int count = cmsArticleService.getMapper().updateByPrimaryKeySelective(cmsArticle);
 		model.addAttribute("count", count);
 		model.addAttribute("id", id);
-		return "redirect:/article/list";
+		return "redirect:/manage/article/list";
 	}
 
 }

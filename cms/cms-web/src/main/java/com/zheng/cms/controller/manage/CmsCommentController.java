@@ -23,7 +23,7 @@ import java.util.List;
  * Created by shuzheng on 2016/11/14.
  */
 @Controller
-@RequestMapping("/comment")
+@RequestMapping("/manage/comment")
 public class CmsCommentController extends BaseController {
 
 	private final static Logger _log = LoggerFactory.getLogger(CmsCommentController.class);
@@ -49,7 +49,7 @@ public class CmsCommentController extends BaseController {
 		CmsCommentExample cmsCommentExample = new CmsCommentExample();
 		cmsCommentExample.setOffset((page - 1) * rows);
 		cmsCommentExample.setLimit(rows);
-		cmsCommentExample.setOrderByClause("orders desc");
+		cmsCommentExample.setOrderByClause("comment_id desc");
 		List<CmsComment> comments = cmsCommentService.getMapper().selectByExample(cmsCommentExample);
 
 		// 分页对象
@@ -58,7 +58,7 @@ public class CmsCommentController extends BaseController {
 
 		model.addAttribute("comments", comments);
 		model.addAttribute("paginator", paginator);
-		return "/comment/list";
+		return "/manage/comment/list";
 	}
 	
 	/**
@@ -67,7 +67,7 @@ public class CmsCommentController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add() {
-		return "/comment/add";
+		return "/manage/comment/add";
 	}
 	
 	/**
@@ -77,12 +77,12 @@ public class CmsCommentController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add( CmsComment cmsComment, Model model) {
+	public String add(CmsComment cmsComment, Model model) {
 		cmsComment.setCtime(System.currentTimeMillis());
 		int count = cmsCommentService.getMapper().insertSelective(cmsComment);
 		model.addAttribute("count", count);
 		_log.info("新增记录id为：{}", cmsComment.getArticleId());
-		return "redirect:/comment/list";
+		return "redirect:/manage/comment/list";
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class CmsCommentController extends BaseController {
 	public String delete(@PathVariable("ids") String ids, Model model) {
 		int count = cmsCommentService.deleteByPrimaryKeys(ids);
 		model.addAttribute("count", count);
-		return "redirect:/comment/list";
+		return "redirect:/manage/comment/list";
 	}
 	
 	/**
@@ -108,7 +108,7 @@ public class CmsCommentController extends BaseController {
 	public String update(@PathVariable("id") int id, Model model) {
 		CmsComment comment = cmsCommentService.getMapper().selectByPrimaryKey(id);
 		model.addAttribute("comment", comment);
-		return "/comment/update";
+		return "/manage/comment/update";
 	}
 	
 	/**
@@ -119,11 +119,11 @@ public class CmsCommentController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-	public String update(@PathVariable("id") int id,  CmsComment cmsComment, Model model) {
+	public String update(@PathVariable("id") int id, CmsComment cmsComment, Model model) {
 		int count = cmsCommentService.getMapper().updateByPrimaryKeySelective(cmsComment);
 		model.addAttribute("count", count);
 		model.addAttribute("id", id);
-		return "redirect:/comment/list";
+		return "redirect:/manage/comment/list";
 	}
 
 }

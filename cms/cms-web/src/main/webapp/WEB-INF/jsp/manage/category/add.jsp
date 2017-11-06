@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<title>新增</title>
+	<meta charset="utf-8"/>
+	<title>新增</title>
 </head>
 <body>
 <div>
@@ -17,24 +17,24 @@
 </div>
 <div>
 	<form method="post">
-	<table border="1">
-		<tr><td>上级编号：</td><td><input type="text" name="pid" autofocus/></td></tr>
-		<tr><td>层级：</td><td><input type="text" name="level"/></td></tr>
-		<tr><td>名称：</td><td><input type="text" name="name"/></td></tr>
-		<tr><td>描述：</td><td><input type="text" name="description"/></td></tr>
-		<tr><td>图标：</td><td><input type="text" name="icon"/></td></tr>
-		<tr>
-			<td>类型：</td>
-			<td>
-				<select name="type">
-					<option value="1">普通</option>
-					<option value="2">热门</option>
-				</select>
-			</td>
-		</tr>
-		<tr><td>别名：</td><td><input type="text" name="alias"/></td></tr>
-		<tr><td></td><td><a href="${basePath}/manage/category/list">取消</a>　<input type="submit" value="保存"/></td></tr>
-	</table>
+		<table border="1">
+			<tr><td>上级编号：</td><td><input type="text" name="pid" autofocus/></td></tr>
+			<tr><td>层级：</td><td><input type="text" name="level" value="1"/></td></tr>
+			<tr><td>名称：</td><td><input type="text" name="name"/></td></tr>
+			<tr><td>描述：</td><td><input type="text" name="description"/></td></tr>
+			<tr><td>图标：</td><td><input type="text" name="icon"/></td></tr>
+			<tr>
+				<td>类型：</td>
+				<td>
+					<select name="type">
+						<option value="1">普通</option>
+						<option value="2">热门</option>
+					</select>
+				</td>
+			</tr>
+			<tr><td>别名：</td><td><input type="text" name="alias"/></td></tr>
+			<tr><td></td><td><a href="${basePath}/manage/category/list">取消</a>　<input type="submit" value="保存"/></td></tr>
+		</table>
 	</form>
 </div>
 </body>
