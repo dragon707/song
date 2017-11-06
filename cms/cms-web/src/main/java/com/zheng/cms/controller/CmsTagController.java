@@ -77,7 +77,7 @@ public class CmsTagController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(@Valid CmsTag cmsTag, Model model) {
+	public String add( CmsTag cmsTag, Model model) {
 		long time = System.currentTimeMillis();
 		cmsTag.setCtime(time);
 		cmsTag.setOrders(time);
@@ -121,7 +121,7 @@ public class CmsTagController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-	public String update(@PathVariable("id") int id, @Valid CmsTag cmsTag, Model model) {
+	public String update(@PathVariable("id") int id,  CmsTag cmsTag, Model model) {
 		int count = cmsTagService.getMapper().updateByPrimaryKeySelective(cmsTag);
 		model.addAttribute("count", count);
 		model.addAttribute("id", id);
