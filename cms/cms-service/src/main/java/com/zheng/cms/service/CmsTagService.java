@@ -7,4 +7,6 @@ import com.zheng.cms.dao.mapper.CmsTagMapper;
  */
 public interface CmsTagService extends BaseService<CmsTagMapper>{
 
+    // 批量删除
+    int deleteByPrimaryKeys(String ids);
 }

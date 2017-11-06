@@ -7,4 +7,6 @@ import com.zheng.cms.dao.mapper.CmsCategoryMapper;
  */
 public interface CmsCategoryService extends BaseService<CmsCategoryMapper>{
 
+    // 批量删除
+    int deleteByPrimaryKeys(String ids);
 }
