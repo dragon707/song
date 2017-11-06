@@ -1,8 +1,7 @@
 package com.zheng.cms.dao.mapper;
 
-import org.springframework.stereotype.Repository;
-
 import com.zheng.cms.dao.model.UserVO;
+import org.springframework.stereotype.Repository;
 
 /**
  * 用户mapper
