@@ -23,7 +23,7 @@ public class ActiveMQController extends BaseController {
 	private static Logger _log = LoggerFactory.getLogger(ActiveMQController.class);
 
 	@Autowired
-	JmsTemplate jmsTemplate;
+	JmsTemplate jmsQueueTemplate;
 
 	@Autowired
 	Destination defaultQueueDestination;
@@ -31,9 +31,12 @@ public class ActiveMQController extends BaseController {
 	@RequestMapping("/send")
 	@ResponseBody
 	public Object send() {
-		for (int i = 0; i < 1000; i ++) {
-			JmsUtil.sendMessage(jmsTemplate, defaultQueueDestination, "消息" + i);
+		long start = System.currentTimeMillis();
+		for (int i = 0; i < 100; i ++) {
+			_log.info("发送消息" + (i + 1));
+			JmsUtil.sendMessage(jmsQueueTemplate, defaultQueueDestination, "消息" + (i + 1));
 		}
+		_log.info("发送消息消耗时间" + (System.currentTimeMillis() - start));
 		return "success";
 	}
 
