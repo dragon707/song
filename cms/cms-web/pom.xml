@@ -86,14 +86,14 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.2.18.v20160721</version>
+                <version>9.3.14.v20161028</version>
                 <configuration>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                     <webApp>
                         <contextPath>/cms-web</contextPath>
                     </webApp>
                     <httpConnector>
-                        <port>8088</port>
+                        <port>8080</port>
                     </httpConnector>
                     <reload>automatic</reload>
                 </configuration>
