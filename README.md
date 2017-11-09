@@ -7,6 +7,7 @@ zheng
 ├── cms 内容管理系统
 |    ├── cms-dao
 |    ├── cms-service
+|    ├── cms-mq(备用mq消费者，cms-web自带消费者)
 |    └── cms-web
 ├── qa 问答系统
 |    ├── qa-dao
@@ -53,14 +54,15 @@ zheng
 * Ehcache: 二级缓存
 * Redis: 分布式缓存存储
 * ActiveMQ: 消息队列
-* Solr: 检索
+* Solr|Elasticsearch: 检索
 * Maven: 项目管理(Gradle)
 * Qiniu: 云存储
 * Jenkins: 持续集成
 * Log4J: 日志管理
-* Protobuf|json: 数据传输 
+* Protobuf|json: 数据传输
 * Spring-boot
 * Swagger2: 接口文档
+* FastDFS: 分布式文件系统
 
 
 # 前端技术:
@@ -86,6 +88,12 @@ zheng
 * IntelliJ IDEA: 开发IDE
 * PowerDesigner: 建模工具
 
+# 资源链接
+* Maven [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi "Maven")
+* Redis [https://redis.io/download](https://redis.io/download "Redis")
+* ActiveMQ [http://activemq.apache.org/download-archives.html](http://activemq.apache.org/download-archives.html "ActiveMQ")
+* ZooKeeper [http://www.apache.org/dyn/closer.cgi/zookeeper/](http://www.apache.org/dyn/closer.cgi/zookeeper/ "ZooKeeper")
+* Jenkins [http://updates.jenkins-ci.org/download/war/](http://updates.jenkins-ci.org/download/war/ "Jenkins")
 
 # 数据模型
 ![数据库模型](DataModelDiagram/zheng.png)
