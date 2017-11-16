@@ -19,10 +19,10 @@
     </properties>
 
     <modules>
-        <module>cms-dao</module>
-        <module>cms-service</module>
-        <module>cms-web</module>
-        <module>cms-mq</module>
+        <module>zheng-cms-dao</module>
+        <module>zheng-cms-service</module>
+        <module>zheng-cms-web</module>
+        <module>zheng-cms-mq</module>
     </modules>
 
     <dependencyManagement>

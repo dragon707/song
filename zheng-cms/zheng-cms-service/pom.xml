@@ -34,7 +34,7 @@
     </dependencies>
 
     <build>
-        <finalName>cms-service</finalName>
+        <finalName>zheng-cms-service</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>

@@ -8,10 +8,10 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>zheng-cms-mq</artifactId>
+    <artifactId>zheng-cms-web</artifactId>
     <packaging>war</packaging>
 
-    <name>zheng-cms-mq Maven Webapp</name>
+    <name>zheng-cms-web Maven Webapp</name>
     <url>http://www.zhangshuzheng.cn</url>
 
     <dependencies>
@@ -30,6 +30,15 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
+        </dependency>
+        <!-- tbschedule -->
+        <dependency>
+            <groupId>com.taobao.pamirs.schedule</groupId>
+            <artifactId>tbschedule</artifactId>
+            <version>3.2.8-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/tbschedule-3.2.8-SNAPSHOT.jar
+            </systemPath>
         </dependency>
     </dependencies>
 
@@ -58,7 +67,7 @@
     </profiles>
 
     <build>
-        <finalName>cms-mq</finalName>
+        <finalName>zheng-cms-web</finalName>
         <filters>
             <filter>src/main/resources/profiles/${env}.properties</filter>
         </filters>
@@ -73,16 +82,27 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.0.0.v20130308</version>
+                <version>9.3.6.v20151106</version>
                 <configuration>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/cms-mq</contextPath>
+                        <contextPath>/zheng-cms-web</contextPath>
                     </webApp>
                     <httpConnector>
-                        <port>8081</port>
+                        <port>8080</port>
                     </httpConnector>
                     <reload>automatic</reload>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <!--是否跳过单元测试-->
+                    <skipTests>true</skipTests>
+                    <!--是否忽略单元测试错误-->
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>
