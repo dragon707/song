@@ -1,42 +1,44 @@
 ## zheng
 
 # 介绍
-```
+``` lua
 zheng
-├── common 公共模块
-├── cms 内容管理系统
-|    ├── cms-dao
-|    ├── cms-service
-|    ├── cms-mq(备用mq消费者，cms-web自带消费者)
-|    └── cms-web
-├── qa 问答系统
-|    ├── qa-dao
-|    ├── qa-service
-|    └── qa-web
-├── upms 通用用户权限系统
-|    ├── upms-dao
-|    ├── upms-service
-|    └── upms-admin
-├── pay 支付系统
-|    ├── pay-service
-|    ├── pay-sdk
-|    └── pay-demo
-├── ucenter 用户系统
-|    ├── ucenter-dao
-|    ├── ucenter-service
-|    └── ucenter-home
-├── wechat 微信系统
-|    ├── wechat-mp 公众号
-|    |    ├── wechat-mp-dao
-|    |    ├── wechat-mp-service
-|    |    └── wechat-mp-admin
-|    └── wechat-app 小程序
-|         ├── wechat-app-sdk
-|         └── wechat-app-example
-├── api 接口系统
-└── oss 对象存储系统
-     ├── oss-sdk
-     └── oss-admin
+├── zheng-common -- 公共模块
+├── zheng-cms -- 内容管理系统
+|    ├── zheng-cms-dao -- 数据库MyBatisGenerator操作
+|    ├── zheng-cms-service -- 业务逻辑
+|    ├── zheng-cms-search -- 搜索服务
+|    ├── zheng-cms-job -- 消息队列、任务调度等
+|    ├── zheng-cms-admin -- CMS后台管理
+|    └── zheng-cms-web -- CMS网站前台
+├── zheng-qa -- 问答系统
+|    ├── zheng-qa-dao
+|    ├── zheng-qa-service
+|    └── zheng-qa-web
+├── zheng-upms -- 通用用户权限系统
+|    ├── zheng-upms-dao
+|    ├── zheng-upms-service
+|    └── zheng-upms-admin
+├── zheng-pay -- 支付系统
+|    ├── zheng-pay-service
+|    ├── zheng-pay-sdk
+|    └── zheng-pay-demo
+├── zheng-ucenter -- 用户系统
+|    ├── zheng-ucenter-dao
+|    ├── zheng-ucenter-service
+|    └── zheng-ucenter-home
+├── zheng-wechat -- 微信系统
+|    ├── zheng-wechat-mp -- 公众号
+|    |    ├── zheng-wechat-mp-dao
+|    |    ├── zheng-wechat-mp-service
+|    |    └── zheng-wechat-mp-admin
+|    └── zheng-wechat-app -- 小程序
+|         ├── zheng-wechat-app-sdk
+|         └── zheng-wechat-app-example
+├── zheng-api -- 接口系统
+└── zheng-oss -- 对象存储系统
+     ├── zheng-oss-sdk
+     └── zheng-oss-admin
 ```
 
 # 后端技术:
@@ -52,11 +54,11 @@ zheng
 * TBSchedule: 任务调度
 * Quartz: 定时任务
 * Ehcache: 二级缓存
-* Redis: 分布式缓存存储
+* Redis: 分布式缓存数据库
 * ActiveMQ: 消息队列
 * Solr|Elasticsearch: 检索
 * Maven: 项目管理(Gradle)
-* Qiniu: 云存储
+* Qiniu|AliOSS: 云存储
 * Jenkins: 持续集成
 * Log4J: 日志管理
 * Protobuf|json: 数据传输
@@ -81,7 +83,7 @@ zheng
 * MySql: 数据库
 * jetty: 开发服务器
 * Tomcat: 应用服务器
-* SVN: 版本管理
+* SVN|Git: 版本管理
 * Nginx: 反向代理服务器
 * Varnish: 内存缓存
 * Navicat for MySQL: 数据库客户端管理
