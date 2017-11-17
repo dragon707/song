@@ -1,4 +1,4 @@
-package com.zheng.cms.jms;
+package com.zheng.cms.job.jms;
 
 import com.zheng.cms.dao.model.User;
 import com.zheng.cms.service.UserService;
